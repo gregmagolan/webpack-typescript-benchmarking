@@ -12,18 +12,15 @@
     "update-1": "node generate.js 1",
     "start": "webpack --watch",
     "dev": "webpack-dev-server",
-    "dev-hot": "webpack-dev-server --hot",
     "clean": "rimraf ./src && rimraf ./dist"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^4.1.1",
-    "fork-ts-checker-webpack-plugin": "^0.2.8",
-    "happypack": "^4.0.0",
+    "@bazel/typescript": "^0.2.2",
+    "express": "^4.16.1",
+    "livereload": "^0.6.2",
     "mkdirp": "^0.5.1",
+    "requirejs": "^2.3.5",
     "rimraf": "^2.6.2",
-    "ts-loader": "^2.3.7",
-    "typescript": "^2.5.3",
-    "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.9.1"
+    "typescript": "2.4.2"
   }
 }

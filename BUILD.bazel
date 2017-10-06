@@ -1,0 +1,31 @@
+package(default_visibility = ["//visibility:public"])
+exports_files(["tsconfig.json"])
+
+# NOTE: this will move to node_modules/BUILD in a later release
+filegroup(name = "node_modules", srcs = glob([
+    "node_modules/**/*.js",
+    "node_modules/**/*.d.ts",
+    "node_modules/**/*.json",
+]))
+
+load("//internal:concat_bundle.bzl", "concat_bundle")
+
+concat_bundle(
+    name = "bundle",
+    deps = ["//src:app"],
+)
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+
+nodejs_binary(
+    name = "devserver",
+    entry_point = "__main__/devserver.js",
+    data = [
+        ":index.bazel.html",
+        ":bundle",
+        ":devserver.js",
+    ],
+    # Tell ibazel not to re-start the server under 'ibazel run'
+    # It should just re-build the data[]
+    tags = ["IBAZEL_MAGIC_TAG"],
+)
