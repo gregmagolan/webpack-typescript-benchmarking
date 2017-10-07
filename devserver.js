@@ -30,7 +30,7 @@ function ibazel_listen(callback) {
 
 app.use(express.static('.'))
 
-const lrserver = livereload.createServer()
+const lrserver = livereload.createServer({debug: false})
 ibazel_listen(() => {
   lrserver.refresh('./bundle.js')
 });

@@ -1,5 +1,6 @@
 ## Usage
 
+* Compile ibazel from head: https://github.com/bazelbuild/bazel-watcher
 * Install packages: `yarn install`
 * Generate source files with: `yarn generate-1000` (or generate-2000, generate-4000, generate-8000, generate-10000)
 * Run webpack dev server with: `yarn dev`

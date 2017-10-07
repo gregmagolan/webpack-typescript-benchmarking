@@ -26,8 +26,9 @@ export class Timer${i} {
   fs.writeFileSync(path, content, {encoding: 'utf-8'});
 }
 
-for (p = 0; p < packages; p++) {
-  const content = `package(default_visibility=["//visibility:public"])
+if (generateIndex) {
+  for (p = 0; p < packages; p++) {
+    const content = `package(default_visibility=["//visibility:public"])
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
 ts_library(
     name = "lib",
@@ -35,11 +36,10 @@ ts_library(
     tsconfig = "//:tsconfig.json",
 )
 `;
-  const path = `src/package${p}/BUILD.bazel`;
-  fs.writeFileSync(path, content, {encoding: 'utf-8'});
-}
+    const path = `src/package${p}/BUILD.bazel`;
+    fs.writeFileSync(path, content, {encoding: 'utf-8'});
+  }
 
-if (generateIndex) {
   console.log('Generating index.ts...');
   let index = ``;
   for (i = 0; i < numFiles; i++) {
