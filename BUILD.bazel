@@ -8,10 +8,9 @@ filegroup(name = "node_modules", srcs = glob([
     "node_modules/**/*.json",
 ]))
 
-load("//internal:concat_bundle.bzl", "concat_bundle")
-
-concat_bundle(
-    name = "bundle",
+load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
+devmode_js_sources(
+    name = "devsources",
     deps = ["//src:app"],
 )
 
@@ -22,7 +21,9 @@ nodejs_binary(
     entry_point = "__main__/devserver.js",
     data = [
         ":index.bazel.html",
-        ":bundle",
+        ":devsources",
+        # Seems like this should be included in the files[] in the :devsources    
+        ":devsources.MF",
         ":devserver.js",
     ],
     # Tell ibazel not to re-start the server under 'ibazel run'
