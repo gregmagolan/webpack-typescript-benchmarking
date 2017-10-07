@@ -15,7 +15,7 @@
     "clean": "rimraf ./src && rimraf ./dist"
   },
   "devDependencies": {
-    "@bazel/typescript": "^0.2.2",
+    "@bazel/typescript": "alexeagle/rules_typescript#add_newline",
     "express": "^4.16.1",
     "livereload": "^0.6.2",
     "mkdirp": "^0.5.1",

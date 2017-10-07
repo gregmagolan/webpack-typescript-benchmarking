@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@bazel/typescript@^0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-0.2.2.tgz#0a0d09924508c946de32e6acdb2b5cc1ee32c506"
+"@bazel/typescript@alexeagle/rules_typescript#add_newline":
+  version "0.1.0"
+  resolved "https://codeload.github.com/alexeagle/rules_typescript/tar.gz/46423df99328cc13a5197bc28eece55d9ae0ed65"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"

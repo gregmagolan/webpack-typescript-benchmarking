@@ -27,7 +27,7 @@ def _concat_bundle_impl(ctx):
   ctx.actions.run_shell(
       inputs = sources,
       outputs = [ctx.outputs.bundle],
-      command = "out=$1; shift; for js in $@; do (cat $js; echo); done > $out",
+      command = "out=$1; shift; cat $@ > $out",
       arguments = [ctx.outputs.bundle.path] + [s.path for s in sources]
   )
   return []
