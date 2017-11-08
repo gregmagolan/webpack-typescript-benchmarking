@@ -2,15 +2,15 @@
 # yarn lockfile v1
 
 
-"@bazel/typescript@alexeagle/rules_typescript#add_newline":
-  version "0.1.0"
-  resolved "https://codeload.github.com/alexeagle/rules_typescript/tar.gz/46423df99328cc13a5197bc28eece55d9ae0ed65"
+"@bazel/typescript@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-0.3.1.tgz#54367df8f30fa0fb25e41106eb7aa558534c36dd"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"
     protobufjs "5.0.0"
-    tsickle "0.24.x"
-    typescript "2.4.x"
+    tsickle "0.25.x"
+    typescript "2.5.x"
 
 "@types/node@7.0.18":
   version "7.0.18"
@@ -1076,6 +1076,10 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1, rimraf@^2.6.2:
   dependencies:
     glob "^7.0.5"
 
+rollup@^0.51.1:
+  version "0.51.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.1.tgz#16288ceafbed0a629d3a127c1e92e503f182e8b1"
+
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
@@ -1220,9 +1224,9 @@ tough-cookie@~2.3.0:
   dependencies:
     punycode "^1.4.1"
 
-tsickle@0.24.x:
-  version "0.24.1"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.24.1.tgz#039343b205bf517a333b0703978892f80a7d848e"
+tsickle@0.25.x:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.25.0.tgz#4ba51e79e9333ab7baec6f374c789b0bc1dba36c"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
@@ -1246,9 +1250,9 @@ type-is@~1.6.15:
     media-typer "0.3.0"
     mime-types "~2.1.15"
 
-typescript@2.4.2, typescript@2.4.x:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.2.tgz#f8395f85d459276067c988aa41837a8f82870844"
+typescript@2.5.x:
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.3.tgz#df3dcdc38f3beb800d4bc322646b04a3f6ca7f0d"
 
 uid-number@^0.0.6:
   version "0.0.6"
