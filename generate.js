@@ -13,7 +13,7 @@ const packages = numFiles / 10;
 console.log(`Generating ${numFiles} source files...`);
 for (i = 0; i < numFiles; i++) {
   const dir = `src/package${i % packages}`;
-  const path = `${dir}/timer${i}.ts`;
+  const path = `${dir}/timer${i}.js`;
   mkdir.sync(dir);
 
   const content = `/** some copyright header */
@@ -33,7 +33,7 @@ if (generateIndex) {
   for (i = 0; i < numFiles; i++) {
     index += `import { Timer${i} } from './package${i % packages}/timer${i}';\n`;
   }
-  index += `let updatedAt: Date = Timer0.createdAt();\n`
+  index += `let updatedAt = Timer0.createdAt();\n`
   for (i = 1; i < numFiles; i++) {
     index += `updatedAt = Timer${i}.createdAt() > updatedAt ? Timer${i}.createdAt() : updatedAt;\n`;
   }
@@ -46,5 +46,5 @@ if (generateIndex) {
 
     document.body.appendChild(document.createTextNode(\`RTT (ms) $\{now.getTime() - updatedAt.getTime()}\`));
   `;
-  fs.writeFileSync('src/index.ts', index, {encoding: 'utf-8'});
+  fs.writeFileSync('src/main.js', index, {encoding: 'utf-8'});
 }
