@@ -7,6 +7,10 @@
 </head>
 <body>
   <h1>Webpack Benchmark</h1>
-  <script src="index.js"></script>
+  <script src="/node_modules/requirejs/require.js"></script>
+  <script src="/bundle.js"></script>
+  <script>
+    require(["__main__/src/index"])
+  </script>
 </body>
 </html>

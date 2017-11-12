@@ -1,6 +1,10 @@
 package(default_visibility = ["//visibility:public"])
 exports_files(["tsconfig.json"])
 
+#load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
+load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
+
 # NOTE: this will move to node_modules/BUILD in a later release
 filegroup(name = "node_modules", srcs = glob([
     "node_modules/**/*.js",
@@ -8,25 +12,17 @@ filegroup(name = "node_modules", srcs = glob([
     "node_modules/**/*.json",
 ]))
 
-load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
 devmode_js_sources(
     name = "devsources",
     deps = ["//src:app"],
 )
 
-load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
-
-nodejs_binary(
+ts_devserver(
     name = "devserver",
-    entry_point = "__main__/devserver.js",
-    data = [
-        ":index.bazel.html",
-        ":devsources",
-        # Seems like this should be included in the files[] in the :devsources    
-        ":devsources.MF",
-        ":devserver.js",
-    ],
-    # Tell ibazel not to re-start the server under 'ibazel run'
-    # It should just re-build the data[]
-    tags = ["IBAZEL_MAGIC_TAG"],
+    # Points to a rule that produces a Manifest as its default output
+    manifest = ":devsources",
+    # This is the path we'll request from the browser, see index.html
+    serving_path = "/bundle.js",
+    # The devserver can serve our static files too
+    static_files = ["index.html", "node_modules/requirejs/require.js"],
 )
