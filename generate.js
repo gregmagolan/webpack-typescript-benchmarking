@@ -16,13 +16,16 @@ for (i = 0; i < numFiles; i++) {
   const path = `${dir}/timer${i}.ts`;
   mkdir.sync(dir);
 
-  const content = `/** some copyright header */
-export class Timer${i} {
-  static createdAt() {
-    return new Date('${now.toISOString()}');
-  }
-}
+  let content;
+  if (i === 0) {
+    content = `/** some copyright header */
+export const createdAt${i} = new Date('${now.toISOString()}');
 `;
+  } else {
+    content = `/** some copyright header */
+export const dummy${i} = 0;
+`;
+  }
 
   fs.writeFileSync(path, content, {encoding: 'utf-8'});
 }
@@ -42,23 +45,16 @@ ts_library(
   }
 
   console.log('Generating index.ts...');
-  let index = ``;
-  for (i = 0; i < numFiles; i++) {
-    index += `import { Timer${i} } from './package${i % packages}/timer${i}';\n`;
-  }
-  index += `let updatedAt: Date = Timer0.createdAt();\n`
-  for (i = 1; i < numFiles; i++) {
-    index += `updatedAt = Timer${i}.createdAt() > updatedAt ? Timer${i}.createdAt() : updatedAt;\n`;
-  }
-  index += `
-    document.body.appendChild(document.createTextNode('Num files ${numFiles}'));
-    document.body.appendChild(document.createElement("br"));
-    console.log("Updated at", updatedAt.toISOString());
-    const now = new Date();
-    console.log("Now", now.toISOString());
-
-    document.body.appendChild(document.createTextNode(\`RTT (ms) $\{now.getTime() - updatedAt.getTime()}\`));
-  `;
+  let index = `import { createdAt0 } from './package0/timer0';
+const now = new Date();
+console.log("Updated at", createdAt0.toISOString());
+console.log("Now", now.toISOString());
+document.body.appendChild(document.createTextNode('Num files ${numFiles}'));
+document.body.appendChild(document.createElement("br"));
+document.body.appendChild(document.createTextNode(\`JS start time (ms) $\{(window as any).jsStartTime.getTime() - createdAt0.getTime()}\`));
+document.body.appendChild(document.createElement("br"));
+document.body.appendChild(document.createTextNode(\`RTT (ms) $\{now.getTime() - createdAt0.getTime()}\`));
+`;
   fs.writeFileSync('src/index.ts', index, {encoding: 'utf-8'});
 
   const deps = [];
