@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-2":
+"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-3":
   version "0.3.0"
-  resolved "git+https://github.com/gregmagolan/rules_typescript.git#5d2d551ca16fc438dc5286272b70b14cd5470ed3"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#62348c8affdba8274bc0827cfe0c251245270f47"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"
@@ -1230,8 +1230,8 @@ tough-cookie@~2.3.0:
     punycode "^1.4.1"
 
 tsickle@0.25.x:
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.25.0.tgz#4ba51e79e9333ab7baec6f374c789b0bc1dba36c"
+  version "0.25.5"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.25.5.tgz#2891d29f97c4aab1306e06378d8496d1765a4bfe"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
