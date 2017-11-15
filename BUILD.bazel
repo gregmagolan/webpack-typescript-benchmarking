@@ -26,5 +26,5 @@ ts_devserver(
     # The devserver can serve our static files too
     static_files = ["index.html", "node_modules/requirejs/require.js"],
     # Turn on live reload
-    tags = ["IBAZEL_LIVE_RELOAD"],
+    tags = ["ibazel_live_reload"],
 )
