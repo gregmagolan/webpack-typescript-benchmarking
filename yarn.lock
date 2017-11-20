@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-4":
+"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-5":
   version "0.3.0"
-  resolved "git+https://github.com/gregmagolan/rules_typescript.git#42deb3b6512956b72b9db9db2a95d5062076d2a8"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#1ecfa192fd2f3f0adb4eff59cbf3d3e00d5e3c08"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"
