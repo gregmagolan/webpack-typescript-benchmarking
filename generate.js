@@ -46,8 +46,8 @@ ts_library(
 
   console.log('Generating index.ts...');
   let index = `import { createdAt0 } from './package0/timer0';
-import { Observable } from 'node_modules/rxjs/src/Observable';
-import 'node_modules/rxjs/src/add/observable/timer';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 const now = new Date();
 console.log("Updated at", createdAt0.toISOString());
 console.log("Now", now.toISOString());
