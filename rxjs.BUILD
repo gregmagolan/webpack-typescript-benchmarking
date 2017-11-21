@@ -7,5 +7,5 @@ ts_library(
   name = "rxjs",
   module_name = "rxjs",
   srcs = glob(["*.ts", "**/*.ts"]),
-  tsconfig = "//:tsconfig.json",
+  tsconfig = "@//:tsconfig.json",
 )
