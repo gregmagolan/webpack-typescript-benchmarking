@@ -10,6 +10,12 @@ load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
 
 node_repositories(package_json = ["//:package.json"])
 
+new_local_repository(
+    name = "rxjs",
+    path = "node_modules/rxjs/src",
+    build_file = "rxjs.BUILD",
+)
+
 # Include @bazel/typescript in package.json#devDependencies
 local_repository(
     name = "build_bazel_rules_typescript",
