@@ -6,11 +6,19 @@ load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_s
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 
 # NOTE: this will move to node_modules/BUILD in a later release
-filegroup(name = "node_modules", srcs = glob([
-    "node_modules/**/*.js",
-    "node_modules/**/*.d.ts",
-    "node_modules/**/*.json",
-]))
+filegroup(
+    name = "node_modules",
+    srcs = glob(["/".join(["node_modules", pkg, "**", ext]) for pkg in [
+        "tsickle",
+        "tsutils",
+        "typescript",
+        "@types",
+    ] for ext in [
+        "*.js",
+        "*.json",
+        "*.d.ts",
+    ]]),
+)
 
 devmode_js_sources(
     name = "devsources",

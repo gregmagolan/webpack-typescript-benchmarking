@@ -46,6 +46,8 @@ ts_library(
 
   console.log('Generating index.ts...');
   let index = `import { createdAt0 } from './package0/timer0';
+import { Observable } from 'node_modules/rxjs/src/Observable';
+import 'node_modules/rxjs/src/add/observable/timer';
 const now = new Date();
 console.log("Updated at", createdAt0.toISOString());
 console.log("Now", now.toISOString());
@@ -54,6 +56,10 @@ document.body.appendChild(document.createElement("br"));
 document.body.appendChild(document.createTextNode(\`JS start time (ms) $\{(window as any).jsStartTime.getTime() - createdAt0.getTime()}\`));
 document.body.appendChild(document.createElement("br"));
 document.body.appendChild(document.createTextNode(\`RTT (ms) $\{now.getTime() - createdAt0.getTime()}\`));
+const rxjsTimer = Observable.timer(0, 1000);
+rxjsTimer.subscribe((t) => {
+  console.log(t);
+});
 `;
   fs.writeFileSync('src/index.ts', index, {encoding: 'utf-8'});
 
@@ -63,9 +69,14 @@ document.body.appendChild(document.createTextNode(\`RTT (ms) $\{now.getTime() - 
   }
   const buildContent = `package(default_visibility=["//visibility:public"])
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_library")
-ts_library(name = "app", srcs = ["index.ts"], deps = [
-${deps.map(d => `    "${d}"`).join(',\n')}
-])
+ts_library(
+    name = "app",
+    srcs = ["index.ts"],
+    tsconfig = "//:tsconfig.json",
+    deps = [
+      "//node_modules/rxjs/src",
+      ${deps.map(d => `    "${d}"`).join(',\n')}
+    ])
 `;
   fs.writeFileSync('src/BUILD.bazel', buildContent, {encoding: 'utf-8'});
 }
