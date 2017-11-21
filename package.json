@@ -16,7 +16,7 @@
     "clean": "rimraf ./src && rimraf ./dist"
   },
   "dependencies": {
-    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-5",
+    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-6",
     "express": "^4.16.1",
     "livereload": "^0.6.2",
     "mkdirp": "^0.5.1",
