@@ -16,6 +16,11 @@ local_repository(
     path = "node_modules/@bazel/typescript",
 )
 
+local_repository(
+    name = "rxjs",
+    path = "node_modules/rxjs/src",
+)
+
 http_archive(
     name = "io_bazel_rules_go",
     url = "https://github.com/bazelbuild/rules_go/releases/download/0.7.0/rules_go-0.7.0.tar.gz",

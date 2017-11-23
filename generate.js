@@ -74,7 +74,7 @@ ts_library(
     srcs = ["index.ts"],
     tsconfig = "//:tsconfig.json",
     deps = [
-      "//node_modules/rxjs/src",
+      "@rxjs//:rxjs",
       ${deps.map(d => `    "${d}"`).join(',\n')}
     ])
 `;
