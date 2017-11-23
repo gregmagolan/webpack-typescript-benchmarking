@@ -1082,9 +1082,9 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1, rimraf@^2.6.2:
   dependencies:
     glob "^7.0.5"
 
-"rxjs@git+https://github.com/gregmagolan/rxjs.git#bazel-build-4":
+"rxjs@git+https://github.com/gregmagolan/rxjs.git#rxjs-bazel-dist-1":
   version "5.5.2"
-  resolved "git+https://github.com/gregmagolan/rxjs.git#39b1531d88eabf3b923ef3d8f8bc3572232da148"
+  resolved "git+https://github.com/gregmagolan/rxjs.git#3778fa65e63b94ed27790a783e9e813dd15f5f77"
   dependencies:
     symbol-observable "^1.0.1"
 
