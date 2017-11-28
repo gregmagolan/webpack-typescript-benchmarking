@@ -23,6 +23,6 @@
     "requirejs": "^2.3.5",
     "rimraf": "^2.6.2",
     "typescript": "2.5.x",
-    "rxjs": "git+https://github.com/gregmagolan/rxjs.git#rxjs-bazel-dist-1"
+    "rxjs": "git+https://github.com/gregmagolan/rxjs.git#rxjs-bazel-dist-2"
   }
 }
