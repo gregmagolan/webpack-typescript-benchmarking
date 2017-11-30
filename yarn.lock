@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-6":
-  version "0.3.0"
-  resolved "git+https://github.com/gregmagolan/rules_typescript.git#64389fcf4ac60b8d486713f37c2c7b699eb61618"
+"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-7":
+  version "0.5.0"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#fa79466398810a063d4885786063d69611ccdc83"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"
@@ -726,7 +726,7 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-livereload@^0.6.2:
+livereload@0.6.x:
   version "0.6.3"
   resolved "https://registry.yarnpkg.com/livereload/-/livereload-0.6.3.tgz#d97f6b133db6c70eff575abc7460f10cd35f6f76"
   dependencies:
@@ -1072,7 +1072,7 @@ request@2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
-requirejs@^2.3.5:
+requirejs@2.3.x:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.5.tgz#617b9acbbcb336540ef4914d790323a8d4b861b0"
 
@@ -1210,8 +1210,8 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
 symbol-observable@^1.0.1:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.1.0.tgz#5c68fd8d54115d9dfb72a84720549222e8db9b32"
 
 tar-pack@^3.4.0:
   version "3.4.1"

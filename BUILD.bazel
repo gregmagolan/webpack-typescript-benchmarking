@@ -9,10 +9,12 @@ load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 filegroup(
     name = "node_modules",
     srcs = glob(["/".join(["node_modules", pkg, "**", ext]) for pkg in [
+        "@types",
+        "livereload",
+        "requirejs",
         "tsickle",
         "tsutils",
         "typescript",
-        "@types",
     ] for ext in [
         "*.js",
         "*.json",
@@ -20,19 +22,10 @@ filegroup(
     ]]),
 )
 
-devmode_js_sources(
-    name = "devsources",
-    deps = ["//src:app"],
-)
-
 ts_devserver(
     name = "devserver",
-    # Points to a rule that produces a Manifest as its default output
-    manifest = ":devsources",
-    # This is the path we'll request from the browser, see index.html
+    deps = ["//src:app"],
     serving_path = "/bundle.js",
-    # The devserver can serve our static files too
     static_files = ["index.html"],
-    # Turn on live reload
     tags = ["ibazel_live_reload"],
 )
