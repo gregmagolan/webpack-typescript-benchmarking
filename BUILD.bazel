@@ -27,5 +27,6 @@ ts_devserver(
     deps = ["//src:app"],
     serving_path = "/bundle.js",
     static_files = ["index.html"],
+    concat_scripts = ["user_concat.js"],
     tags = ["ibazel_live_reload"],
 )
