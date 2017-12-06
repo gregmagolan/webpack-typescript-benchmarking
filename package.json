@@ -19,7 +19,7 @@
     "rxjs": "git+https://github.com/gregmagolan/rxjs.git#rxjs-bazel-dist-2"
   },
   "devDependencies": {
-    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-8",
+    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-9",
     "express": "^4.16.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
