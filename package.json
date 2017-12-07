@@ -16,10 +16,10 @@
     "clean": "rimraf ./src && rimraf ./dist"
   },
   "dependencies": {
-    "rxjs": "git+https://github.com/gregmagolan/rxjs.git#rxjs-bazel-dist-2"
+    "rxjs": "^5.5.5"
   },
   "devDependencies": {
-    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-9",
+    "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-10",
     "express": "^4.16.1",
     "mkdirp": "^0.5.1",
     "rimraf": "^2.6.2",
