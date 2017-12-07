@@ -26,6 +26,7 @@ ts_devserver(
     name = "devserver",
     deps = ["//src:app"],
     serving_path = "/bundle.js",
+    entry_module = "__main__/src/index",
     static_files = ["index.html"],
     scripts = ["profiler.js"],
     tags = ["ibazel_live_reload"],
