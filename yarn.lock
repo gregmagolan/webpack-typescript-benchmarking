@@ -4,7 +4,7 @@
 
 "@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-10":
   version "0.6.0"
-  resolved "git+https://github.com/gregmagolan/rules_typescript.git#27d21f6953dbc61edae26c1da44dfcb08a7a325f"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#24f34f0659e08e82616d0a5d595f71faedc0e441"
 
 accepts@~1.3.4:
   version "1.3.4"
