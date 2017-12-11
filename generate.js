@@ -47,6 +47,8 @@ ts_library(
   console.log('Generating index.ts...');
   let index = `if ((window as any).IBazelProfileEvent) {
   (window as any).IBazelProfileEvent("USER_SCRIPT_START");
+} else {
+  console.error("No IBazelProfileEvent");
 }
 import { createdAt0 } from './package0/timer0';
 import { Observable } from 'rxjs/Observable';
@@ -66,6 +68,8 @@ rxjsTimer.subscribe((t) => {
 });
 if ((window as any).IBazelProfileEvent) {
   (window as any).IBazelProfileEvent("USER_SCRIPT_END");
+} else {
+  console.error("No IBazelProfileEvent");
 }
 `;
   fs.writeFileSync('src/index.ts', index, {encoding: 'utf-8'});
